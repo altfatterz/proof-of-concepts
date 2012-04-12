@@ -18,8 +18,8 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 public class OrganisationClient {
 
-	private static final String CONSUMER_KEY = "iPhoneAppKey";
-	private static final String CONSUMER_SECRET = "iPhoneAppSecret";
+	private static final String CONSUMER_KEY = "myKey";
+	private static final String CONSUMER_SECRET = "mySecret";
 	private static final OAuthConsumer consumer = new CommonsHttpOAuthConsumer(
 			CONSUMER_KEY, CONSUMER_SECRET);
 

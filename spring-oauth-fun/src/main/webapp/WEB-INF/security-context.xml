@@ -11,26 +11,17 @@
 		class="org.springframework.security.oauth.provider.OAuthProcessingFilterEntryPoint" />
 
 	<security:http entry-point-ref="oauthProcessingFilterEntryPoint">
-		<security:intercept-url pattern="/*"
-			access="ROLE_CONSUMER" />
+		<security:intercept-url pattern="/*" access="ROLE_CONSUMER" />
 	</security:http>
 
-	<security:authentication-manager>
-		<security:authentication-provider>
-			<security:user-service>
-				<security:user name="zoltan" password="zoltan"
-					authorities="ROLE_USER" />
-			</security:user-service>
-		</security:authentication-provider>
-	</security:authentication-manager>
+	<security:authentication-manager />
 
 	<oauth:provider consumer-details-service-ref="customerDetails"
 		token-services-ref="tokenServices" />
 
 	<oauth:consumer-details-service id="customerDetails">
-		<oauth:consumer name="iPhoneApp" key="iPhoneAppKey"
-			secret="iPhoneAppSecret" requiredToObtainAuthenticatedToken="false"
-			authorities="ROLE_CONSUMER" />
+		<oauth:consumer name="iPhoneApp" key="myKey" secret="mySecret"
+			requiredToObtainAuthenticatedToken="false" authorities="ROLE_CONSUMER" />
 	</oauth:consumer-details-service>
 
 	<oauth:token-services id="tokenServices" />
