@@ -29,7 +29,9 @@ public class OrganisationClient {
 
 	public static void main(String[] args) throws Exception {
 
-		String url = "http://localhost:8080/spring-oauth-fun/organisations";
+		//String url = "http://localhost:8080/spring-oauth-fun/organisations";
+		
+		String url = "http://searchdev.infohubble.com:8080/spring-oauth-fun/organisations";
 		HttpGet request = new HttpGet(url);
 
 		// sign the request
