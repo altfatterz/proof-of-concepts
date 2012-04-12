@@ -1,4 +1,4 @@
-package com.infohubble.oauth;
+package com.infohubble.oauth.provider;
 
 public class Organisation {
 

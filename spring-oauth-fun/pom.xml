@@ -14,6 +14,8 @@
 		<slf4j.version>1.6.4</slf4j.version>
 		<log4j.version>1.2.16</log4j.version>
 		<jackson.version>1.9.5</jackson.version>
+		<junit.version>4.10</junit.version>
+		<signpost.version>1.2.1.2</signpost.version>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -64,6 +66,7 @@
 			</exclusions>
 		</dependency>
 
+		<!-- for mapping to json -->
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
@@ -101,25 +104,29 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.1</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
 
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.10</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- ****************** CLIENT **************** -->
+		<!-- singpost requires 4.0.1 version of httpclient -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>oauth.signpost</groupId>
+			<artifactId>signpost-commonshttp4</artifactId>
+			<version>${signpost.version}</version>
+		</dependency>
+		
+
 	</dependencies>
 
 	<repositories>

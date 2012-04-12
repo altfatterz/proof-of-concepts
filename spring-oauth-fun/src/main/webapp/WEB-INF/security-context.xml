@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oauth="http://www.springframework.org/schema/security/oauth"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
+		http://www.springframework.org/schema/security/oauth http://www.springframework.org/schema/security/spring-security-oauth-1.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+
+	<bean name="oauthProcessingFilterEntryPoint"
+		class="org.springframework.security.oauth.provider.OAuthProcessingFilterEntryPoint" />
+
+	<security:http entry-point-ref="oauthProcessingFilterEntryPoint">
+		<security:intercept-url pattern="/*"
+			access="ROLE_CONSUMER" />
+	</security:http>
+
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:user-service>
+				<security:user name="zoltan" password="zoltan"
+					authorities="ROLE_USER" />
+			</security:user-service>
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+	<oauth:provider consumer-details-service-ref="customerDetails"
+		token-services-ref="tokenServices" />
+
+	<oauth:consumer-details-service id="customerDetails">
+		<oauth:consumer name="iPhoneApp" key="iPhoneAppKey"
+			secret="iPhoneAppSecret" requiredToObtainAuthenticatedToken="false"
+			authorities="ROLE_CONSUMER" />
+	</oauth:consumer-details-service>
+
+	<oauth:token-services id="tokenServices" />
+
+</beans>
