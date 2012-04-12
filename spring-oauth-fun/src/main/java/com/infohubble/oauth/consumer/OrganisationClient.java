@@ -20,8 +20,12 @@ public class OrganisationClient {
 
 	private static final String CONSUMER_KEY = "myKey";
 	private static final String CONSUMER_SECRET = "mySecret";
+	
+	private static final String CONSUMER_KEY2 = "myKey2";
+	private static final String CONSUMER_SECRET2 = "mySecret2";
+	
 	private static final OAuthConsumer consumer = new CommonsHttpOAuthConsumer(
-			CONSUMER_KEY, CONSUMER_SECRET);
+			CONSUMER_KEY2, CONSUMER_SECRET2);
 
 	public static void main(String[] args) throws Exception {
 
