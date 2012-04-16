@@ -29,9 +29,8 @@ public class OrganisationClient {
 
 	public static void main(String[] args) throws Exception {
 
-		String url = "http://localhost:8080/spring-oauth-fun/organisations";
-		// String url =
-		// "http://searchdev.infohubble.com:8080/spring-oauth-fun/organisations";
+		String url = "http://localhost:8080/organisations";
+		// String url = "http://searchdev.infohubble.com:8080/spring-oauth-fun/organisations";
 
 		HttpGet request = new HttpGet(url);
 
@@ -45,18 +44,6 @@ public class OrganisationClient {
 
 		String result = convertStreamToString(inputStream);
 		System.out.println(result);
-
-		// 2nd time
-//		response = httpClient.execute(request);
-//		inputStream = response.getEntity().getContent();
-//		result = convertStreamToString(inputStream);
-//		System.out.println(result);
-//
-//		// 3nd time
-//		response = httpClient.execute(request);
-//		inputStream = response.getEntity().getContent();
-//		result = convertStreamToString(inputStream);
-//		System.out.println(result);
 
 	}
 
