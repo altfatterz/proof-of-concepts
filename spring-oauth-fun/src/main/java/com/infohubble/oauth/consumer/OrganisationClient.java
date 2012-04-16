@@ -20,18 +20,19 @@ public class OrganisationClient {
 
 	private static final String CONSUMER_KEY = "myKey";
 	private static final String CONSUMER_SECRET = "mySecret";
-	
+
 	private static final String CONSUMER_KEY2 = "myKey2";
 	private static final String CONSUMER_SECRET2 = "mySecret2";
-	
+
 	private static final OAuthConsumer consumer = new CommonsHttpOAuthConsumer(
-			CONSUMER_KEY2, CONSUMER_SECRET2);
+			CONSUMER_KEY, CONSUMER_SECRET);
 
 	public static void main(String[] args) throws Exception {
 
-		//String url = "http://localhost:8080/spring-oauth-fun/organisations";
-		
-		String url = "http://searchdev.infohubble.com:8080/spring-oauth-fun/organisations";
+		String url = "http://localhost:8080/spring-oauth-fun/organisations";
+		// String url =
+		// "http://searchdev.infohubble.com:8080/spring-oauth-fun/organisations";
+
 		HttpGet request = new HttpGet(url);
 
 		// sign the request
@@ -44,6 +45,19 @@ public class OrganisationClient {
 
 		String result = convertStreamToString(inputStream);
 		System.out.println(result);
+
+		// 2nd time
+//		response = httpClient.execute(request);
+//		inputStream = response.getEntity().getContent();
+//		result = convertStreamToString(inputStream);
+//		System.out.println(result);
+//
+//		// 3nd time
+//		response = httpClient.execute(request);
+//		inputStream = response.getEntity().getContent();
+//		result = convertStreamToString(inputStream);
+//		System.out.println(result);
+
 	}
 
 	public static String convertStreamToString(InputStream is)

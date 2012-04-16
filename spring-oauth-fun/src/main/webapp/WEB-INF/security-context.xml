@@ -10,6 +10,10 @@
 	<bean name="oauthProcessingFilterEntryPoint"
 		class="org.springframework.security.oauth.provider.OAuthProcessingFilterEntryPoint" />
 
+    <bean name="nonceServices" class="org.springframework.security.oauth.provider.nonce.NullNonceServices">
+    
+    </bean>
+    
 	<security:http entry-point-ref="oauthProcessingFilterEntryPoint">
 		<security:intercept-url pattern="/*" access="ROLE_CONSUMER" />
 	</security:http>
@@ -17,7 +21,7 @@
 	<security:authentication-manager />
 
 	<oauth:provider consumer-details-service-ref="customerDetails"
-		token-services-ref="tokenServices" />
+		token-services-ref="tokenServices" nonce-services-ref="nonceServices"  />
 
 	<oauth:consumer-details-service id="customerDetails">
 		<oauth:consumer name="consumer" key="myKey" secret="mySecret"
