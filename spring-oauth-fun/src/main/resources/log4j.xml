@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.infohubble.oauth">
+	<logger name="com.infohubble.oauth.provider">
 		<level value="info" />
 	</logger>
 	
