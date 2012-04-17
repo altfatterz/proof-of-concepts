@@ -17,10 +17,10 @@
 	
 	<!-- 3rdparty Loggers -->
 	<logger name="org.apache.http">
-		<level value="debug" />
+		<level value="info" />
 	</logger>
 	<logger name="org.springframework.security.oauth">
-		<level value="debug" />
+		<level value="info" />
 	</logger>
 	
 	<logger name="org.springframework.web">
