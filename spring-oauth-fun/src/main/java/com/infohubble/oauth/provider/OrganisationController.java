@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/organisations")
 public class OrganisationController {
 
-
-
-	@RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
 	public List<Organisation> getOrganisations(@RequestHeader("Authorization") String authorization) {
 		List<Organisation> organisations = new ArrayList<Organisation>();
