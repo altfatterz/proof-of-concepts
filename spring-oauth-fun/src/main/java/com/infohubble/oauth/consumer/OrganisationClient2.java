@@ -32,7 +32,7 @@ public class OrganisationClient2 {
     private static String url = "http://infohubble-altfatterz.apigee.com/spring-oauth-fun/organisations";
 
     public static void main(String[] args) throws Exception {
-        for(int i = 0; i < 500; i++) {
+        for(int i = 0; i < 100; i++) {
             System.out.println("Sent request:" + i);
             sendRequest();
         }
