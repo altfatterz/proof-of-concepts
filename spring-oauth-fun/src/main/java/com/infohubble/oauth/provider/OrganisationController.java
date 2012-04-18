@@ -18,7 +18,7 @@ public class OrganisationController {
 
     @RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
-	public List<Organisation> getOrganisations(@RequestHeader("Authorization") String authorizationHeader) {
+	public List<Organisation> getOrganisations() {
         List<Organisation> organisations = new ArrayList<Organisation>();
 		organisations.add(new Organisation(1234L, "dummy organisation"));
 		return organisations;
