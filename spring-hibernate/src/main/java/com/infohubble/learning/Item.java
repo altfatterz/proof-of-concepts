@@ -1,33 +1,23 @@
 package com.infohubble.learning;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 /**
  * An item in an order
  */
 @Entity
+@Table(name = "items")
 public class Item {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@ManyToOne
-	private Order order;
-
 	private String product;
 
 	private double price;
 
 	private int quantity;
-
-	public Order getOrder() {
-		return order;
-	}
 
 	public String getProduct() {
 		return product;

@@ -25,6 +25,18 @@ public class Order {
 
 	private String customer;
 
+    /**
+     * JPA 2.0 unidirectional OneToMany relationship
+     * @JoinColumn can be used on OneToMany to define a foreign key
+     *
+     * The main issue with an unidirectional OneToMany is that the
+     * foreign key is owned by the target object's table, so if the target object has no
+     * knowledge of this foreign key, inserting and updating the value is difficult.
+     * In a unidirectional OneToMany the source object take ownership of the foreign key field,
+     * and is responsible for updating its value.
+     *
+     */
+
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "order_id")
 	private List<Item> items = new ArrayList<Item>();
